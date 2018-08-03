@@ -1,0 +1,65 @@
+// RESET
+
+*, 
+*::before,
+*::after {
+	box-sizing: inherit;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%; // 10px
+}
+
+body {
+	box-sizing: border-box;
+	font-size: 1.6rem;
+}
+
+// BASIC
+
+.container {
+	background-color: #ccc;
+	padding: 1rem;
+	height: 1000px;
+
+	// FLEX CONTAINER
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	flex-wrap: wrap;
+	align-content: space-around; // for this to be visible, flex-container height should be large
+}
+
+.item {
+	background-color: #f1425d;
+	color: #fff;
+	font-size: 4rem;
+	padding: 3rem;
+	margin: 3rem;
+}
+
+.item--2 {
+	height: 20rem;
+	/*
+	flex-basis: 30rem; // works like max-width
+	flex-shrink: 0; // works like width
+	*/
+
+	// flex: 0 0 30rem;
+	flex: 0 1 30rem; // ususally we want flex-items to not shrink
+}
+
+.item--3 {
+	order: 1;
+	flex: 1
+}
+
+.item--4 {
+	align-self: stretch;
+	order: -1;
+}
+
